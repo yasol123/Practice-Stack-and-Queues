@@ -1,37 +1,34 @@
-#include<iostream>
-#include "IntStack.h"
+#include <iostream>
+#include "LinkedList.h"
 using namespace std;
+
 int main() {
-	int catchVar; // hold values popped off the stack.
-	//define a stack object to hold 5 values.
-	IntStack stack(5);
-	//Push the values 5, 10, 15, 20, and 25 onto the stack.
-	cout << "Pushing 5\n";
-	stack.push(5);
-	cout << "Pushing 10\n";
-	stack.push(10);
-	cout << "Pushing 15\n";
-	stack.push(15);
-	cout << "Pushing 20\n";
-	stack.push(20);
-	cout << "Pushing 25\n";
-	stack.push(25);
-	
-	//pop the values off the stack.
-	cout << "Popping...\n";
-	stack.pop(catchVar);
-	cout << catchVar << endl;
-	cout << "Popping...\n";
-	stack.pop(catchVar);
-	cout << catchVar << endl;
-	cout << "Popping...\n";
-	stack.pop(catchVar);
-	cout << catchVar << endl;
-	cout << "Popping...\n";
-	stack.pop(catchVar);
-	cout << catchVar << endl;
-	cout << "Popping...\n";
-	stack.pop(catchVar);
-	cout << catchVar << endl;
+	IntList intlist;
+	intlist.appendInt(1);
+	intlist.appendInt(4);
+	intlist.appendInt(3);
+	intlist.appendInt(8);
+	intlist.appendInt(13);
+	//display the current appended integers.
+	cout << "Current integers list: " << endl;
+	intlist.displayInt();
+	//insert an integer element.
+	intlist.insertInt(10);
+	//display the integers list after inserting.
+	cout << "After inserting an integer.." << endl;
+	intlist.displayInt();
+	//delete the last integer element.
+	cout << "Now deleting the rear integer.\n";
+	intlist.deleteInt(13);
+	//display the list
+	cout << "Here are the integers left.\n";
+	intlist.displayInt();
+	cout << endl;
+	//remove a front integer element.
+	cout << "Remove a front integer.\n";
+	intlist.deleteInt(1);
+	//display the list.
+	cout << "Here are the nodes left.\n";
+	intlist.displayInt();
 	return 0;
 }
